@@ -1,13 +1,16 @@
 import React from "react";
 import Header from "./components/Headers";
+import lion from "./assets/LION.jpg"
 
 const App = () => {
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-pink-400 min-h-screen">
       <Header />
-      <main className="p-4">
-        <h1 className="text-2xl font-bold">Welcome to My Website</h1>
-        <p className="mt-2 text-gray-700">This is a simple header example using Tailwind CSS and Vite.</p>
+      <main>
+        <div className="w-full">
+        <img src={lion} className="object-cover w-screen"/>
+        </div>
+
       </main>
     </div>
   );
