@@ -1,0 +1,5 @@
+Django login
+https://learndjango.com/tutorials/django-login-and-logout-tutorial
+
+adapted with 
+https://www.youtube.com/watch?v=OojA7SPViEs
