@@ -3,3 +3,6 @@ https://learndjango.com/tutorials/django-login-and-logout-tutorial
 
 adapted with 
 https://www.youtube.com/watch?v=OojA7SPViEs
+
+Recipts
+https://www.geeksforgeeks.org/receipt-print-with-gui-using-django/
