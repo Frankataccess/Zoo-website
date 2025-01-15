@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "C:/Users/frank.mccann.355_acc/Documents/Code/Zoo-website/zoo-website-frontend/src/assets/paw print.svg"
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 return (
@@ -11,9 +12,11 @@ return (
 
         {/* Navigation */}
         <nav className="space-x-4">
+        <Link to="Events">
         <a href="#" className="text-slate-900 text-xl hover:underline">
             Events
         </a>
+        </Link>
         <a href="#" className="text-slate-900 text-xl hover:underline">
             Tickets
         </a>

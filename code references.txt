@@ -6,3 +6,6 @@ https://www.youtube.com/watch?v=OojA7SPViEs
 
 Recipts
 https://www.geeksforgeeks.org/receipt-print-with-gui-using-django/
+
+react linking pages 
+http://www.hackingwithreact.com/read/1/23/creating-a-link-between-pages-in-react-router
