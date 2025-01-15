@@ -1,9 +1,13 @@
+import React from 'react';
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import ReactDOM from 'react-dom/client';
 import {BrowserRouter as Router,Routes,Route,Navigate,} from "react-router-dom";
 import './index.css'
+
 import App from './Pages/App.jsx'
-import Accounts from './Pages/Account.jsx'
+import Account from './Pages/Account.jsx'
+import Animals from './Pages/Animals.jsx';
 import Cart from './Pages/Cart.jsx'
 import Events from './Pages/Events.jsx'
 import Facilities from './Pages/Facilities.jsx'
@@ -19,7 +23,8 @@ const Main = () => {
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/Accounts" element={<Accounts />} />
+        <Route path="/Account" element={<Account />} />
+        <Route path="/Animals" element={<Animals />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Events" element={<Events />} />
         <Route path="/Facilities" element={<Facilities />} />
