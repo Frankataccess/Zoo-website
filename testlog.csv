@@ -1,0 +1,5 @@
+description of test, test data, expected outcome, actual outcome, comments and intended actions,
+finding out why frontend isnt linking to backend, registration data, stores registration data, returns long generic error, comment out parts of code: Error was in settings.py in django. Cors headers allowing the wrong html port.
+attempting to integrate new navbar, web page, navbar shows, code doesnt run, need to install dependencies 
+log in with unregistered account, register page, Error, Error, this means log in system works 
+Register an account, register page, stores data in database, stores data in database, this means registration is working

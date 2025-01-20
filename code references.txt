@@ -9,3 +9,9 @@ https://www.geeksforgeeks.org/receipt-print-with-gui-using-django/
 
 react linking pages 
 http://www.hackingwithreact.com/read/1/23/creating-a-link-between-pages-in-react-router
+
+Axios
+https://www.youtube.com/watch?v=KgPyJZpwubY&list=PLmEKHA8iFrmANyPesrWRwVIaMY74xJ_Qu&index=15
+
+navbar 
+https://mui.com/material-ui/react-drawer/

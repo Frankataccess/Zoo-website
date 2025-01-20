@@ -5,6 +5,7 @@ import Register from './components/Register'
 import Login from './components/Login'
 import About from './components/About'
 import Navbar from './components/Navbar'
+import NavbarNew from './components/NavbarNew'
 import {Routes, Route, useLocation} from 'react-router-dom'
 import ProtectedRoute from './components/ProtectedRoutes'
 import PasswordResetRequest from './components/PasswordResetRequest'
@@ -27,7 +28,7 @@ function App() {
 
         :
 
-        <Navbar
+        <NavbarNew
         content={
           <Routes>
             <Route element={<ProtectedRoute/>}> 

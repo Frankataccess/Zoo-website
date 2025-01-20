@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -28,14 +27,13 @@ export default function Navbar(props) {
   const navigate = useNavigate()
 
   const logoutUser = () =>{
-     AxiosInstance.post(`logoutall/`,{
-     })
-     .then( () => {
+    AxiosInstance.post(`logoutall/`,{
+    })
+    .then( () => {
         localStorage.removeItem("Token")
         navigate('/')
-     }
-
-     )
+    }
+    )
   }
 
   return (
@@ -88,7 +86,7 @@ export default function Navbar(props) {
               </ListItem>
   
           </List>
-         
+        
         </Box>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>

@@ -5,3 +5,13 @@ Created home page
 
 14/01/2025 
 created login backend 
+
+20/01/2025 
+attempted to remake the login and registration using axios. 
+Currently not linking frontend to backend so login is unable to work
+
+Spent ages checking new backend model for an error 
+after narrowing it down the url allowed in my django settings was incorrect 
+I am now currently working on a new navbar system that ive borrowed from material UI 
+
+current version in window outdated 
