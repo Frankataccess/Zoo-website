@@ -18,3 +18,6 @@ https://mui.com/material-ui/react-drawer/
 
 tailwind css
 https://tailwindcss.com/docs/guides/vite
+
+navbar redesigned 
+https://www.material-tailwind.com/docs/react/navbar#

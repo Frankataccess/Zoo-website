@@ -4,3 +4,4 @@ attempting to integrate new navbar, web page, navbar shows, code doesnt run, nee
 log in with unregistered account, register page, Error, Error, this means log in system works 
 Register an account, register page, stores data in database, stores data in database, this means registration is working
 dropdown menu on new navbar, new navbar, click on navbar and it displays a dropdown, displays a dropdown but none of the links work and the dropdown is on the left, use tailwind css to align it to the right
+integrate old navbar with new navbar, old and new navbar, old navbar displays with dropdown menu,Logo not displaying and page links redirecting to the wrong pages, comment out parts of the code and try and combine them again later 
