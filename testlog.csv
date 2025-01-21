@@ -3,3 +3,4 @@ finding out why frontend isnt linking to backend, registration data, stores regi
 attempting to integrate new navbar, web page, navbar shows, code doesnt run, need to install dependencies 
 log in with unregistered account, register page, Error, Error, this means log in system works 
 Register an account, register page, stores data in database, stores data in database, this means registration is working
+dropdown menu on new navbar, new navbar, click on navbar and it displays a dropdown, displays a dropdown but none of the links work and the dropdown is on the left, use tailwind css to align it to the right

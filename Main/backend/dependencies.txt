@@ -1,0 +1,5 @@
+knox
+pip install django-rest-knox
+
+django_rest_password_reset
+pip install django-rest-passwordreset

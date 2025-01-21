@@ -15,3 +15,6 @@ https://www.youtube.com/watch?v=KgPyJZpwubY&list=PLmEKHA8iFrmANyPesrWRwVIaMY74xJ
 
 navbar 
 https://mui.com/material-ui/react-drawer/
+
+tailwind css
+https://tailwindcss.com/docs/guides/vite

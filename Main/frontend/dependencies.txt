@@ -1,0 +1,5 @@
+@material-tailwind/react
+npm install @material-tailwind/react
+
+heroicons
+npm i @heroicons/react

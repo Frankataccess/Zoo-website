@@ -14,4 +14,13 @@ Spent ages checking new backend model for an error
 after narrowing it down the url allowed in my django settings was incorrect 
 I am now currently working on a new navbar system that ive borrowed from material UI 
 
-current version in window outdated 
+current version of backend is outdated 
+
+Updated backend and sorted git stuff out 
+
+21/01/25
+After a couple of redesigns i have decided to integrate the old navbar style with the new ones functionality 
+This will allow users to access their account details more easily and allow for the navbar to be less clustered 
+My aim for this week is to finish the frontend pages and get them looking good 
+Then next week i will work on functional features like the hotel booking system and ticket system 
+these tasks are currently beyond my knowledge of django to be completed
