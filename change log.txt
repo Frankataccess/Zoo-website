@@ -1,0 +1,54 @@
+13/01/2025
+Setup django and react 
+Created Header 
+Created home page 
+
+14/01/2025 
+created login backend 
+
+20/01/2025 
+attempted to remake the login and registration using axios. 
+Currently not linking frontend to backend so login is unable to work
+
+Spent ages checking new backend model for an error 
+after narrowing it down the url allowed in my django settings was incorrect 
+I am now currently working on a new navbar system that ive borrowed from material UI 
+
+current version of backend is outdated 
+
+Updated backend and sorted git stuff out 
+
+21/01/25
+After a couple of redesigns i have decided to integrate the old navbar style with the new ones functionality 
+This will allow users to access their account details more easily and allow for the navbar to be less clustered 
+My aim for this week is to finish the frontend pages and get them looking good 
+Then next week i will work on functional features like the hotel booking system and ticket system 
+these tasks are currently beyond my knowledge of django to be completed
+
+22/01/25
+By using a prexisting logout feature i have managed to integrate it into my new navbar so users can logout.
+The new navbar is very clean and minimalistic
+The dropdown features now work and just need attatching to new pages.
+I have added a folder called pages to clean up the file structure 
+This required me to update a lot of the import paths 
+By using the <Link to=""> tag and adding the urls in my app.jsx i was able to create a functioning navigation system
+All of the necessary pages have been created 
+My next steps 
+
+Ticket system 
+Hotel system 
+rewards system 
+Animal system 
+
+The ticket system will require me to create a database 
+It will combine user email, total tickets, the amounts of each ticket type, cost and the ticket ID 
+
+The hotel system will also need a database 
+It will store the user email, check in date, check out date, room ID and cost
+I will also need to be able to make sure check in dates dont overlap 
+
+Rewards system will take the total tickets the user has purchased and store them in a table 
+Once the tickets are over a cretain number the user will be rewarded 
+
+The animal system will impliment an API that returns information about the desired animal 
+https://www.api-ninjas.com/api/animals

@@ -8,7 +8,9 @@ import MenuItem from "@mui/material/MenuItem";
 import logo from "../assets/Paw print.svg";
 import account from "../assets/account.svg";
 import burger from "../assets/burger.svg";
+import cart from "../assets/cart.svg"
 import AccountButton from "./AccountButton";
+import Logout from "@mui/icons-material/Logout";
 const drawerWidth = 240;
 
 export default function Navbar(props) {
@@ -35,87 +37,86 @@ export default function Navbar(props) {
   return (
     <header className="bg-slate-400/20 text-slate-900">
       <div className="container mx-auto flex justify-between items-center p-4">
-        <div>
-          {/* Logo */}
-          <Link to="/home ">
-            <img src={logo} className="h-10 w-16" />
-            <div className="text-4xl text-center font-bold text-slate-900 ">
-              Riglet Zoo
-            </div>
-          </Link>
-        </div>
-        <AccountButton icon={account}>
+      <AccountButton icon={account}>
           <MenuItem onClick={handleClose}>
-            <Link to="/Events">
+            <Link to="/profile">
               <a href="#" className="text-slate-900 text-xl hover:underline">
-                account
+                Profile
               </a>
             </Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <Link to="/Events">
+            <Link to="/bookings">
               <a href="#" className="text-slate-900 text-xl hover:underline">
-                Events
+                My Bookings
+              </a>
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link to="/rewards">
+              <a href="#" className="text-slate-900 text-xl hover:underline">
+                Rewards
+              </a>
+            </Link>
+          </MenuItem>
+                    <MenuItem onClick={logoutUser}>
+            <Link to="/bookings">
+              <a href="#" className="text-slate-900 text-xl hover:underline">
+                Logout
               </a>
             </Link>
           </MenuItem>
         </AccountButton>
 
+        <div>
+          {/* Logo */}
+          <Link to="/home" className="flex items-center space-x-2">
+            <img src={logo} className="h-14 w-14" />
+            <div className="text-4xl text-center font-bold text-slate-900 ">
+              Riget Zoo
+            </div>
+          </Link>
+        </div>
+
+        <div>
+          <Link to="/cart" >
+            <img src={cart} className="h-10 w-10"/>
+          </Link>
+        </div>
+
         <AccountButton icon={burger}>
-          
-        <MenuItem onClick={handleClose}>
-            <Link to="/Events">
+          <MenuItem onClick={handleClose}>
+            <Link to="/tickets">
+              <a href="#" className="text-slate-900 text-xl hover:underline">
+                Tickets
+              </a>
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link to="/hotel">
+              <a href="#" className="text-slate-900 text-xl hover:underline">
+                Hotels
+              </a>
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link to="/events">
               <a href="#" className="text-slate-900 text-xl hover:underline">
                 Events
               </a>
             </Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <Link to="/Events">
+            <Link to="/animals">
               <a href="#" className="text-slate-900 text-xl hover:underline">
-                Events
+                Animals
               </a>
             </Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <Link to="/Events">
+            <Link to="/facilities">
               <a href="#" className="text-slate-900 text-xl hover:underline">
-                Events
-              </a>
-            </Link>
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/Events">
-              <a href="#" className="text-slate-900 text-xl hover:underline">
-                Events
-              </a>
-            </Link>
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/Events">
-              <a href="#" className="text-slate-900 text-xl hover:underline">
-                Events
-              </a>
-            </Link>
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/Events">
-              <a href="#" className="text-slate-900 text-xl hover:underline">
-                Events
-              </a>
-            </Link>
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/Events">
-              <a href="#" className="text-slate-900 text-xl hover:underline">
-                Events
-              </a>
-            </Link>
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/Events">
-              <a href="#" className="text-slate-900 text-xl hover:underline">
-                Events
+                Facilities
               </a>
             </Link>
           </MenuItem>

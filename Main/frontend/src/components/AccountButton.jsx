@@ -5,9 +5,6 @@ import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import logo from "../assets/Paw print.svg";
-import account from "../assets/account.svg";
-import burger from "../assets/burger.svg";
 const drawerWidth = 240;
 
 

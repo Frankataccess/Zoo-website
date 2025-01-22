@@ -5,8 +5,8 @@
   align-items: center;
 
   justify-content: center;
-  background: rgb(205,0,118);
-  background: linear-gradient(137deg, rgba(205,0,118,1) 0%, rgba(85,35,185,1) 68%); 
+  background: rgb(165, 165, 165);
+  background: linear-gradient(137deg, rgb(151, 151, 151) 0%, rgb(0, 0, 0) 68%); 
 }
 
 .whiteBox{
@@ -37,5 +37,5 @@
 }
 
 .myButton{
-  background: rgb(66, 8, 160) !important;
+  background: rgb(68, 68, 68) !important;
 }

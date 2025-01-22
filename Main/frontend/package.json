@@ -20,6 +20,7 @@
     "@mui/styled-engine-sc": "^6.4.0",
     "axios": "^1.7.9",
     "dependencies": "^0.0.1",
+    "flowbite-react": "^0.10.2",
     "heroicons": "^2.2.0",
     "heroicons-react": "^1.4.1",
     "react": "^18.2.0",
@@ -27,6 +28,7 @@
     "react-hook-form": "^7.50.1",
     "react-router-dom": "^6.21.3",
     "styled-components": "^6.1.14",
+    "swiper": "^11.2.1",
     "yup": "^1.4.0"
   },
   "devDependencies": {
