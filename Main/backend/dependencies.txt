@@ -3,3 +3,6 @@ pip install django-rest-knox
 
 django_rest_password_reset
 pip install django-rest-passwordreset
+
+corsheaders
+python -m pip install django-cors-headers

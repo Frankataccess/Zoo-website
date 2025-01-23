@@ -35,93 +35,80 @@ export default function Navbar(props) {
   };
 
   return (
-    <header className="bg-slate-400/20 text-slate-900">
-      <div className="container mx-auto flex justify-between items-center p-4">
+<header className="bg-slate-400/20 text-slate-900">
+  <div className="flex items-center justify-between w-full p-4">
+    {/* Left Section - Account Button */}
+    <div className="flex items-center">
       <AccountButton icon={account}>
-          <MenuItem onClick={handleClose}>
-            <Link to="/profile">
-              <a href="#" className="text-slate-900 text-xl hover:underline">
-                Profile
-              </a>
-            </Link>
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/bookings">
-              <a href="#" className="text-slate-900 text-xl hover:underline">
-                My Bookings
-              </a>
-            </Link>
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/rewards">
-              <a href="#" className="text-slate-900 text-xl hover:underline">
-                Rewards
-              </a>
-            </Link>
-          </MenuItem>
-                    <MenuItem onClick={logoutUser}>
-            <Link to="/bookings">
-              <a href="#" className="text-slate-900 text-xl hover:underline">
-                Logout
-              </a>
-            </Link>
-          </MenuItem>
-        </AccountButton>
-
-        <div>
-          {/* Logo */}
-          <Link to="/home" className="flex items-center space-x-2">
-            <img src={logo} className="h-14 w-14" />
-            <div className="text-4xl text-center font-bold text-slate-900 ">
-              Riget Zoo
-            </div>
+        <MenuItem onClick={handleClose}>
+          <Link to="/profile" className="text-slate-900 text-xl hover:underline">
+            Profile
           </Link>
-        </div>
-
-        <div>
-          <Link to="/cart" >
-            <img src={cart} className="h-10 w-10"/>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/bookings" className="text-slate-900 text-xl hover:underline">
+            My Bookings
           </Link>
-        </div>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/rewards" className="text-slate-900 text-xl hover:underline">
+            Rewards
+          </Link>
+        </MenuItem>
+        <MenuItem onClick={logoutUser}>
+          <Link to="/bookings" className="text-slate-900 text-xl hover:underline">
+            Logout
+          </Link>
+        </MenuItem>
+      </AccountButton>
+    </div>
 
-        <AccountButton icon={burger}>
-          <MenuItem onClick={handleClose}>
-            <Link to="/tickets">
-              <a href="#" className="text-slate-900 text-xl hover:underline">
-                Tickets
-              </a>
-            </Link>
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/hotel">
-              <a href="#" className="text-slate-900 text-xl hover:underline">
-                Hotels
-              </a>
-            </Link>
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/events">
-              <a href="#" className="text-slate-900 text-xl hover:underline">
-                Events
-              </a>
-            </Link>
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/animals">
-              <a href="#" className="text-slate-900 text-xl hover:underline">
-                Animals
-              </a>
-            </Link>
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link to="/facilities">
-              <a href="#" className="text-slate-900 text-xl hover:underline">
-                Facilities
-              </a>
-            </Link>
-          </MenuItem>
-        </AccountButton>
-      </div>
-    </header>
+    {/* Middle Section - Logo */}
+    <div className="absolute left-1/2 transform -translate-x-1/2">
+      <Link to="/home" className="flex items-center space-x-2">
+        <img src={logo} className="h-14 w-14" alt="Logo" />
+        <div className="text-4xl text-center font-bold text-slate-900">
+          Riget Zoo
+        </div>
+      </Link>
+    </div>
+
+    {/* Right Section - Cart and Burger Icon */}
+    <div className="flex items-center space-x-4">
+      <Link to="/cart">
+        <img src={cart} className="h-10 w-10" alt="Cart" />
+      </Link>
+      <AccountButton icon={burger}>
+        <MenuItem onClick={handleClose}>
+          <Link to="/tickets" className="text-slate-900 text-xl hover:underline">
+            Tickets
+          </Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/hotel" className="text-slate-900 text-xl hover:underline">
+            Hotels
+          </Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/events" className="text-slate-900 text-xl hover:underline">
+            Events
+          </Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/animals" className="text-slate-900 text-xl hover:underline">
+            Animals
+          </Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/facilities" className="text-slate-900 text-xl hover:underline">
+            Facilities
+          </Link>
+        </MenuItem>
+      </AccountButton>
+    </div>
+  </div>
+</header>
+
+
   );
 }
