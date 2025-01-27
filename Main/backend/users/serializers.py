@@ -1,6 +1,8 @@
 from rest_framework import serializers 
 from .models import * 
 from django.contrib.auth import get_user_model 
+from datetime import date
+from django.utils import timezone
 User = get_user_model()
 
 class LoginSerializer(serializers.Serializer):
@@ -29,8 +31,9 @@ class TicketSerializer(serializers.ModelSerializer):
         fields = ['id', 'user', 'ticket_type', 'ticket_date', 'ticket_id']
         read_only_fields = ['ticket_id']
 
-    def validate_ticket_date(self, value):
-        from datetime import date
-        if value < date.today():
+def validate_ticket_date(self, value):
+        # Ensure the ticket_date is not in the past
+        today = timezone.localdate()  # Get the current date (aware of timezone)
+        if value < today:
             raise serializers.ValidationError("The ticket date cannot be in the past.")
         return value

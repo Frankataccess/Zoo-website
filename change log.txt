@@ -76,3 +76,5 @@ https://github.com/justdjango/django-react-ecommerce
 After lots of trail and error the problems i was encountering with the backend adding models to the database 
 was because the database needed to be deleted and the migrations needed to be forced 
 python manage.py makemigrations users
+backend currently works and can recieve requests from django admin 
+Frontend not linking 

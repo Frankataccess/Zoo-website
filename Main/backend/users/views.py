@@ -69,3 +69,7 @@ class TicketViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         # Automatically set the logged-in user's email as the ticket's user
         serializer.save(user=self.request.user.email)
+
+    def create(self, request, *args, **kwargs):
+        print('Received payload:', request.data)  # Debugging
+        return super().create(request, *args, **kwargs)

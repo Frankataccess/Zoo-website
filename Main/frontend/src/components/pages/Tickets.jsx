@@ -1,104 +1,103 @@
-import React, { useState } from "react";
-import AxiosInstance from "../AxiosInstance";
-import NavbarNew from '../NavbarNew'
+import { useState, useEffect } from 'react';
+import AxiosInstance from '../AxiosInstance';
 
+const TicketsPage = () => {
+  const [tickets, setTickets] = useState([]); // Stores the list of tickets
+  const [ticketType, setTicketType] = useState(''); // Selected ticket type
+  const [ticketDate, setTicketDate] = useState(''); // Selected ticket date
+  const [loading, setLoading] = useState(true); // Loading state for fetching tickets
+  const [error, setError] = useState(null); // Error state for API requests
 
-const Tickets = ({ userEmail }) => {
-  const [familyTickets, setFamilyTickets] = useState(0);
-  const [adultTickets, setAdultTickets] = useState(0);
-  const [childTickets, setChildTickets] = useState(0);
-
-  const FAMILY_PRICE = 50; 
-  const ADULT_PRICE = 20;
-  const CHILD_PRICE = 10;
-
-
-  const totalCost =
-    familyTickets * FAMILY_PRICE +
-    adultTickets * ADULT_PRICE +
-    childTickets * CHILD_PRICE;
-
-  const handleCheckout = () => {
-    const data = {
-      family_tickets: familyTickets,
-      adult_tickets: adultTickets,
-      child_tickets: childTickets,
-      total_cost: totalCost,
-      email: userEmail,
+  // Fetch tickets when the component loads
+  useEffect(() => {
+    const fetchTickets = async () => {
+      try {
+        const response = await AxiosInstance.get('/tickets/');
+        setTickets(response.data); // Set tickets to the response data
+      } catch (err) {
+        setError('Failed to fetch tickets. Please try again.');
+      } finally {
+        setLoading(false); // Stop loading spinner
+      }
     };
 
-    AxiosInstance.post("/api/tickets/", data)
-      .then((response) => {
-        alert("Tickets purchased successfully!");
-    
-        setFamilyTickets(0);
-        setAdultTickets(0);
-        setChildTickets(0);
-      })
-      .catch((error) => {
-        console.error("Error purchasing tickets:", error);
-        alert("Something went wrong. Please try again.");
-      });
-  };
+    fetchTickets();
+  }, []);
+
+  // Handle booking a new ticket
+  const bookTicket = async (e) => {
+    e.preventDefault();
+    console.log('Booking ticket with data:', { ticket_type: ticketType, ticket_date: ticketDate });
+
+    try {
+        const response = await AxiosInstance.post('/tickets/', {
+            ticket_type: ticketType,
+            ticket_date: ticketDate,  // Ensure this is in 'YYYY-MM-DD' format
+        });
+        console.log('Ticket created:', response.data);
+        setTickets((prev) => [...prev, response.data]);
+        setTicketType('');
+        setTicketDate('');
+        setError(null);
+    } catch (err) {
+        console.error('Error booking ticket:', err.response?.data || err.message);
+        setError(err.response?.data || 'Failed to book ticket. Please try again.');
+    }
+};
+
+  if (loading) return <div className="text-center">Loading tickets...</div>;
+  if (error) return <div className="text-center text-red-500">{error}</div>;
 
   return (
-    <>
-    <NavbarNew/>
-    <div className="max-w  p-4 bg-white shadow-lg rounded-lg">
-      <h1 className="text-2xl font-bold mb-4">Purchase Tickets</h1>
-      <div className="space-y-4">
-        {/* Family Tickets */}
-        <div className="flex justify-between items-center">
-          <label className="text-lg font-medium">Family Tickets</label>
-          <input
-            type="number"
-            min="0"
-            value={familyTickets}
-            onChange={(e) => setFamilyTickets(Number(e.target.value))}
-            className="w-16 p-2 border rounded"
-          />
-        </div>
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Your Tickets</h1>
 
-        {/* Adult Tickets */}
-        <div className="flex justify-between items-center">
-          <label className="text-lg font-medium">Adult Tickets</label>
+      {/* Ticket Booking Form */}
+      <form className="mb-8" onSubmit={bookTicket}>
+        <div className="mb-4">
+          <label className="block text-sm font-medium mb-2">Ticket Type</label>
+          <select
+            className="w-full border rounded p-2"
+            value={ticketType}
+            onChange={(e) => setTicketType(e.target.value)}
+            required
+          >
+            <option value="">Select Type</option>
+            <option value="family">Family</option>
+            <option value="adult">Adult</option>
+            <option value="child">Child</option>
+          </select>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium mb-2">Date</label>
           <input
-            type="number"
-            min="0"
-            value={adultTickets}
-            onChange={(e) => setAdultTickets(Number(e.target.value))}
-            className="w-16 p-2 border rounded"
+            type="date"
+            className="w-full border rounded p-2"
+            value={ticketDate}
+            onChange={(e) => setTicketDate(e.target.value)}
+            required
           />
         </div>
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >
+          Book Ticket
+        </button>
+      </form>
 
-        {/* Child Tickets */}
-        <div className="flex justify-between items-center">
-          <label className="text-lg font-medium">Child Tickets</label>
-          <input
-            type="number"
-            min="0"
-            value={childTickets}
-            onChange={(e) => setChildTickets(Number(e.target.value))}
-            className="w-16 p-2 border rounded"
-          />
-        </div>
+      {/* Tickets List */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {tickets.map((ticket) => (
+          <div key={ticket.ticket_id} className="p-4 border rounded shadow">
+            <h2 className="font-bold">Ticket ID: {ticket.ticket_id}</h2>
+            <p>Type: {ticket.ticket_type}</p>
+            <p>Date: {ticket.ticket_date}</p>
+          </div>
+        ))}
       </div>
-
-      {/* Total Cost */}
-      <div className="mt-6 text-lg font-semibold">
-        Total Cost: ${totalCost}
-      </div>
-
-      {/* Checkout Button */}
-      <button
-        onClick={handleCheckout}
-        className="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-      >
-        Checkout
-      </button>
     </div>
-    </>
   );
 };
 
-export default Tickets;
+export default TicketsPage;
