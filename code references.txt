@@ -30,3 +30,4 @@ https://www.freecodecamp.org/news/how-to-build-reusable-react-components/
 
 making backend 
 https://www.geeksforgeeks.org/e-commerce-website-using-tailwind-and-react-using-django/
+

@@ -37,25 +37,31 @@ class CustomUser(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
-def generate_ticket_id():
-    characters = string.ascii_uppercase + string.digits
-    while True:
-        ticket_id = ''.join(secrets.choice(characters) for _ in range(12))
-        if not Ticket.objects.filter(ticket_id=ticket_id).exists():
-            return ticket_id
+# def generate_ticket_id():
+#     characters = string.ascii_uppercase + string.digits
+#     while True:
+#         ticket_id = ''.join(secrets.choice(characters) for _ in range(12))
+#         if not Ticket.objects.filter(ticket_id=ticket_id).exists():
+#             return ticket_id
 
-class Tickets(models.Model):
-    TICKET_CHOICES = [
-        ("family","Family"),
-        ("adult","Adult"),
-        ("child","Child"),
-    ]
-    user = models.EmailField(max_length=200)
-    ticket_type = models.CharField(max_length=10, choices=TICKET_CHOICES)
-    ticket_date = models.DateField()
-    ticket_id = models.CharField(max_length=12, unique=True, default=generate_ticket_id)
+# class Tickets(models.Model):
+#     TICKET_CHOICES = [
+#         ("family","Family"),
+#         ("adult","Adult"),
+#         ("child","Child"),
+#     ]
+#     user = models.EmailField(max_length=200)
+#     ticket_type = models.CharField(max_length=10, choices=TICKET_CHOICES)
+#     ticket_date = models.DateField()
+#     ticket_id = models.CharField(max_length=12, unique=True, default=generate_ticket_id)
 
-    def save():
+#     def save(self, *args, **kwargs):
+#         if not self.ticket_id:
+#             self.ticket_id = ''.join (random.choices(string.digits, k=12))
+#             super().save(*args,**kwargs)
+
+#     def __str__(self):
+#         return f"{self.user} - {self.ticket_type} ({self.ticket_id})"
         
 
 @receiver(reset_password_token_created)
