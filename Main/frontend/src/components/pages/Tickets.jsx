@@ -1,16 +1,3 @@
-// const Tickets = () =>{
-//     return(
-        
-//         <div> 
-//             <NavbarNew/>
-//             This is the Tickets page
-//         </div>
-//     )
-
-// }
-
-// export default Tickets
-
 import React, { useState } from "react";
 import AxiosInstance from "../AxiosInstance";
 import NavbarNew from '../NavbarNew'
@@ -21,11 +8,11 @@ const Tickets = ({ userEmail }) => {
   const [adultTickets, setAdultTickets] = useState(0);
   const [childTickets, setChildTickets] = useState(0);
 
-  const FAMILY_PRICE = 50; // Example prices
+  const FAMILY_PRICE = 50; 
   const ADULT_PRICE = 20;
   const CHILD_PRICE = 10;
 
-  // Calculate total cost
+
   const totalCost =
     familyTickets * FAMILY_PRICE +
     adultTickets * ADULT_PRICE +
@@ -43,7 +30,7 @@ const Tickets = ({ userEmail }) => {
     AxiosInstance.post("/api/tickets/", data)
       .then((response) => {
         alert("Tickets purchased successfully!");
-        // Reset ticket counts after successful purchase
+    
         setFamilyTickets(0);
         setAdultTickets(0);
         setChildTickets(0);
@@ -55,9 +42,9 @@ const Tickets = ({ userEmail }) => {
   };
 
   return (
-    
-    <div className="max-w-md mx-auto p-4 bg-white shadow-lg rounded-lg">
-        <NavbarNew/>
+    <>
+    <NavbarNew/>
+    <div className="max-w  p-4 bg-white shadow-lg rounded-lg">
       <h1 className="text-2xl font-bold mb-4">Purchase Tickets</h1>
       <div className="space-y-4">
         {/* Family Tickets */}
@@ -110,6 +97,7 @@ const Tickets = ({ userEmail }) => {
         Checkout
       </button>
     </div>
+    </>
   );
 };
 

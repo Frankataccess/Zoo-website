@@ -5,4 +5,10 @@ django_rest_password_reset
 pip install django-rest-passwordreset
 
 corsheaders
-python -m pip install django-cors-headers
+pip install django-cors-headers
+
+restframework
+pip install djangorestframework
+
+knox 
+pip install knox

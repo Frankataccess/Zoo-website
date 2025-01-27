@@ -21,3 +21,6 @@ https://tailwindcss.com/docs/guides/vite
 
 navbar redesigned 
 https://www.material-tailwind.com/docs/react/navbar#
+
+Tickets 
+https://www.youtube.com/watch?v=RG_Y7lIDXPM&list=PLLRM7ROnmA9Hp8j_1NRCK6pNVFfSf4G7a
