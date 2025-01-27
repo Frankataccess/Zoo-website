@@ -58,5 +58,14 @@ The animalssystem seems unlikely to get created with the approaching deadline
 The ticket frontend has been setup and includes axios so it can be sent to the backend 
 I setup the backend tickets model so user purchases could be stored 
 error with migrations has caused all backend changes to be reverted 
-reused tickets code for hotel page
-trying to 
+reused tickets frontend for hotel page
+Need to impliment date selection for tickets and hotel 
+
+Django models mockup
+
+Tickets 
+email 
+ticket type 
+ticket date 
+ticket ID
+

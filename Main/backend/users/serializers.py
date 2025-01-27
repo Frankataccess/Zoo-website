@@ -22,3 +22,8 @@ class RegisterSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)
         return user
+
+class TicketSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Tickets
+        fields = ['id','user','ticket_type','ticket_date']

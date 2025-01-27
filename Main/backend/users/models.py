@@ -1,13 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.base_user import BaseUserManager
-
 from django_rest_passwordreset.signals import reset_password_token_created
 from django.dispatch import receiver 
 from django.urls import reverse 
 from django.template.loader import render_to_string
 from django.core.mail import EmailMultiAlternatives
 from django.utils.html import strip_tags
+import secrets
+import string
+from django.db import models
 
 class CustomUserManager(BaseUserManager): 
     def create_user(self, email, password=None, **extra_fields ): 
@@ -35,6 +37,26 @@ class CustomUser(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
+def generate_ticket_id():
+    characters = string.ascii_uppercase + string.digits
+    while True:
+        ticket_id = ''.join(secrets.choice(characters) for _ in range(12))
+        if not Ticket.objects.filter(ticket_id=ticket_id).exists():
+            return ticket_id
+
+class Tickets(models.Model):
+    TICKET_CHOICES = [
+        ("family","Family"),
+        ("adult","Adult"),
+        ("child","Child"),
+    ]
+    user = models.EmailField(max_length=200)
+    ticket_type = models.CharField(max_length=10, choices=TICKET_CHOICES)
+    ticket_date = models.DateField()
+    ticket_id = models.CharField(max_length=12, unique=True, default=generate_ticket_id)
+
+    def save():
+        
 
 @receiver(reset_password_token_created)
 def password_reset_token_created(reset_password_token, *args, **kwargs):

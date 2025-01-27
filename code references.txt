@@ -27,3 +27,6 @@ https://www.youtube.com/watch?v=RG_Y7lIDXPM&list=PLLRM7ROnmA9Hp8j_1NRCK6pNVFfSf4
 
 Making code reusable 
 https://www.freecodecamp.org/news/how-to-build-reusable-react-components/
+
+making backend 
+https://www.geeksforgeeks.org/e-commerce-website-using-tailwind-and-react-using-django/
