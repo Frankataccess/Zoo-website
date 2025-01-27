@@ -69,3 +69,9 @@ ticket type
 ticket date 
 ticket ID
 
+After an unsuccessful attempt to create a ticketing system i turned to github
+https://github.com/justdjango/django-react-ecommerce
+
+28/01/25
+After lots of trail and error the problems i was encountering with the backend adding models to the database 
+was because the database needed to be deleted and the migrations needed to be forced 
