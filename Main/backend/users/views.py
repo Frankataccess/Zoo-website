@@ -57,13 +57,15 @@ class UserViewset(viewsets.ViewSet):
         serializer = self.serializer_class(queryset, many=True)
         return Response(serializer.data)
 
-# class TicketView(APIview):
-#     permission_classes = [IsAuthenticated]
+class TicketViewSet(viewsets.ModelViewSet):
+    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = TicketSerializer
+    queryset = Ticket.objects.all()
 
-#     def post(self, request):
-#         data = request.data
-#         user_email = request.user_email
-#         ticket_type = data.get('ticket_type')
-#         ticket_date = data.get('ticket_date')
+    def get_queryset(self):
+        # Only return tickets for the logged-in user
+        return self.queryset.filter(user=self.request.user.email)
 
-#         ticket = Ticket.objects.create(user=user_email, type=ticket_type, date )
+    def perform_create(self, serializer):
+        # Automatically set the logged-in user's email as the ticket's user
+        serializer.save(user=self.request.user.email)

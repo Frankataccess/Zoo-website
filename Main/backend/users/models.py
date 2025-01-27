@@ -10,6 +10,7 @@ from django.utils.html import strip_tags
 import secrets
 import string
 from django.db import models
+from django.conf import settings
 
 class CustomUserManager(BaseUserManager): 
     def create_user(self, email, password=None, **extra_fields ): 
@@ -37,32 +38,29 @@ class CustomUser(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
-# def generate_ticket_id():
-#     characters = string.ascii_uppercase + string.digits
-#     while True:
-#         ticket_id = ''.join(secrets.choice(characters) for _ in range(12))
-#         if not Ticket.objects.filter(ticket_id=ticket_id).exists():
-#             return ticket_id
+def generate_ticket_id():
+    characters = string.ascii_uppercase + string.digits
+    return ''.join(secrets.choice(characters) for _ in range(12))
 
-# class Tickets(models.Model):
-#     TICKET_CHOICES = [
-#         ("family","Family"),
-#         ("adult","Adult"),
-#         ("child","Child"),
-#     ]
-#     user = models.EmailField(max_length=200)
-#     ticket_type = models.CharField(max_length=10, choices=TICKET_CHOICES)
-#     ticket_date = models.DateField()
-#     ticket_id = models.CharField(max_length=12, unique=True, default=generate_ticket_id)
+class Ticket(models.Model):
+    TICKET_CHOICES = [
+        ("family", "Family"),
+        ("adult", "Adult"),
+        ("child", "Child"),
+    ]
+    
+    user = models.EmailField(max_length=200)  # Email of the logged-in user
+    ticket_type = models.CharField(max_length=10, choices=TICKET_CHOICES)
+    ticket_date = models.DateField()
+    ticket_id = models.CharField(max_length=12, unique=True, default=generate_ticket_id)
 
-#     def save(self, *args, **kwargs):
-#         if not self.ticket_id:
-#             self.ticket_id = ''.join (random.choices(string.digits, k=12))
-#             super().save(*args,**kwargs)
+    def save(self, *args, **kwargs):
+        if not self.ticket_id:
+            self.ticket_id = generate_ticket_id()
+        super().save(*args, **kwargs)
 
-#     def __str__(self):
-#         return f"{self.user} - {self.ticket_type} ({self.ticket_id})"
-        
+    def __str__(self):
+        return f"{self.user} - {self.ticket_type} ({self.ticket_id})"
 
 @receiver(reset_password_token_created)
 def password_reset_token_created(reset_password_token, *args, **kwargs):
