@@ -19,6 +19,7 @@ import ProtectedRoute from './components/ProtectedRoutes'
 import PasswordResetRequest from './components/PasswordResetRequest'
 import PasswordReset from './components/PasswordReset'
 import Rewards from './components/pages/Rewards'
+import MediaCard from './components/MediaCard'
 
 function App() {
   const location = useLocation()
@@ -43,6 +44,8 @@ function App() {
                 <Route path="/hotel" element={<Hotel/>}/>
                 <Route path="/tickets" element={<Tickets/>}/>
                 <Route path="/rewards" element={<Rewards/>}/>
+                <Route path="/media" element={<MediaCard/>}/>
+
             </Route>
         </Routes>
     </>

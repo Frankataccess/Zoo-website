@@ -52,3 +52,11 @@ Once the tickets are over a cretain number the user will be rewarded
 
 The animal system will impliment an API that returns information about the desired animal 
 https://www.api-ninjas.com/api/animals
+
+27/01/25 
+The animalssystem seems unlikely to get created with the approaching deadline 
+The ticket frontend has been setup and includes axios so it can be sent to the backend 
+I setup the backend tickets model so user purchases could be stored 
+error with migrations has caused all backend changes to be reverted 
+reused tickets code for hotel page
+trying to 

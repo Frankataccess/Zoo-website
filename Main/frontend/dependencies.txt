@@ -3,3 +3,6 @@ npm install @material-tailwind/react
 
 heroicons
 npm i @heroicons/react
+
+Mui
+npm install @mui/material @emotion/react @emotion/styled

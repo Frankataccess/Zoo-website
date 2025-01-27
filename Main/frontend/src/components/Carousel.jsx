@@ -50,7 +50,7 @@ return (
             <p className="text-sm md:text-lg mb-4">{slide.description}</p>
             {/* Button */}
             <Link to={slide.link}>
-                <button className="px-4 py-2 bg-slate-900 text-slate-100 rounded hover:bg-blue-600">
+                <button className="px-4 py-2 bg-slate-100 text-slate-900 rounded hover:bg-blue-600">
                 {slide.buttonText}
                 </button>
             </Link>

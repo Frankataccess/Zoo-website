@@ -24,3 +24,6 @@ https://www.material-tailwind.com/docs/react/navbar#
 
 Tickets 
 https://www.youtube.com/watch?v=RG_Y7lIDXPM&list=PLLRM7ROnmA9Hp8j_1NRCK6pNVFfSf4G7a
+
+Making code reusable 
+https://www.freecodecamp.org/news/how-to-build-reusable-react-components/
