@@ -1,30 +1,28 @@
 import { useState, useEffect } from 'react';
 import AxiosInstance from '../AxiosInstance';
 
-const TicketsPage = () => {
-  const [tickets, setTickets] = useState([]); // Stores the list of tickets
-  const [ticketType, setTicketType] = useState(''); // Selected ticket type
-  const [ticketDate, setTicketDate] = useState(''); // Selected ticket date
-  const [loading, setLoading] = useState(true); // Loading state for fetching tickets
-  const [error, setError] = useState(null); // Error state for API requests
+const Tickets = () => {
+  const [tickets, setTickets] = useState([]); 
+  const [ticketType, setTicketType] = useState(''); 
+  const [ticketDate, setTicketDate] = useState(''); 
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null); 
 
-  // Fetch tickets when the component loads
   useEffect(() => {
     const fetchTickets = async () => {
       try {
         const response = await AxiosInstance.get('/tickets/');
-        setTickets(response.data); // Set tickets to the response data
+        setTickets(response.data);
       } catch (err) {
         setError('Failed to fetch tickets. Please try again.');
       } finally {
-        setLoading(false); // Stop loading spinner
+        setLoading(false); 
       }
     };
 
     fetchTickets();
   }, []);
 
-  // Handle booking a new ticket
   const bookTicket = async (e) => {
     e.preventDefault();
     console.log('Booking ticket with data:', { ticket_type: ticketType, ticket_date: ticketDate });
@@ -32,7 +30,7 @@ const TicketsPage = () => {
     try {
         const response = await AxiosInstance.post('/tickets/', {
             ticket_type: ticketType,
-            ticket_date: ticketDate,  // Ensure this is in 'YYYY-MM-DD' format
+            ticket_date: ticketDate,  
         });
         console.log('Ticket created:', response.data);
         setTickets((prev) => [...prev, response.data]);
@@ -100,4 +98,4 @@ const TicketsPage = () => {
   );
 };
 
-export default TicketsPage;
+export default Tickets;
