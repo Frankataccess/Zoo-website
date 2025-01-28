@@ -49,7 +49,7 @@ class Ticket(models.Model):
         ("child", "Child"),
     ]
     
-    user = models.EmailField(max_length=200)  # Email of the logged-in user
+    user = models.EmailField(max_length=200,blank=True, null=True) 
     ticket_type = models.CharField(max_length=10, choices=TICKET_CHOICES)
     ticket_date = models.DateField()
     ticket_id = models.CharField(max_length=12, unique=True, default=generate_ticket_id)
