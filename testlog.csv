@@ -6,3 +6,6 @@ Register an account, register page, stores data in database, stores data in data
 dropdown menu on new navbar, new navbar, click on navbar and it displays a dropdown, displays a dropdown but none of the links work and the dropdown is on the left, use tailwind css to align it to the right
 integrate old navbar with new navbar, old and new navbar, old navbar displays with dropdown menu,Logo not displaying and page links redirecting to the wrong pages, comment out parts of the code and try and combine them again later 
 test dropdown links,dropdown links, redirects to desired page, redirected to wrong page, Make sure the <Link to ="/"> is correct
+make sure new models are added to database, database, user_tickets model created, user_tickets model not there, By deleting the database and using python manage.py makemigrations users it fixed 
+See if a ticket can be created, django admin pannel, ticket is created, ticket is created and data is viewable, Test with frontend 
+try and book ticket with frontend, localhost:5173/tickets, User can select ticket type and amount and book ticket, user can select date type and try and book the ticket however it returns an error, the error is a bad request error and an error reading the properties of data 
