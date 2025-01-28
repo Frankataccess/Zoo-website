@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import AxiosInstance from '../AxiosInstance';
+import NavbarNew from '../NavbarNew'
+import Navbar from '../NavbarNew';
 
 const Tickets = () => {
   const [tickets, setTickets] = useState([]); 
@@ -47,6 +49,8 @@ const Tickets = () => {
   if (error) return <div className="text-center text-red-500">{error}</div>;
 
   return (
+    <>
+    <NavbarNew/>
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Your Tickets</h1>
 
@@ -95,6 +99,7 @@ const Tickets = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

@@ -2,6 +2,7 @@ import AxiosInstance from '../AxiosInstance'
 import {React, useEffect, useMemo, useState} from 'react'
 import {Box} from '@mui/material'
 import NavbarNew from '../NavbarNew'
+import Footer from '../Footer'
 import lion from '../../assets/lion.jpg'
 import Carousel from '../Carousel'
 import MediaCard from '../MediaCard'
@@ -49,7 +50,8 @@ const Home = () =>{
         ];
 
     return(
-    <div className="min-h-screen">
+    <div>
+        <div className='min-h-screen '>
         <NavbarNew/>
         <main>
         <Carousel slides={homeSlides} autoplay={true} interval={5000}>
@@ -60,11 +62,10 @@ const Home = () =>{
         <div className='md:text-center'> 
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur a minima reiciendis earum dignissimos nulla? Enim inventore aliquid animi voluptas! Cum placeat fugit exercitationem. Omnis in ex laborum adipisci obcaecati reiciendis ut quod totam nemo aspernatur? Nostrum ipsum nemo ab. Ex, quibusdam accusamus? Doloremque laboriosam aliquid, inventore odit ipsum debitis.
         </div>
-        <div className="flex items-center justify-center">
-            <img src={lion} className="h-60 w-auto" alt="Lion" />
-        </div>
 
         </main>
+        </div>
+        <Footer/>
     </div>
     )
 }
