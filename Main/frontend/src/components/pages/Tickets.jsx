@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import AxiosInstance from '../AxiosInstance';
 import NavbarNew from '../NavbarNew'
 import Navbar from '../NavbarNew';
+import Footer from '../Footer'
+
 
 const Tickets = () => {
   const [tickets, setTickets] = useState([]); 
@@ -99,6 +101,7 @@ const Tickets = () => {
         ))}
       </div>
     </div>
+    <Footer/>
     </>
   );
 };

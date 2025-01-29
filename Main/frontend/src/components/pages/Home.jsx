@@ -62,7 +62,9 @@ const Home = () =>{
         <div className='md:text-center'> 
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur a minima reiciendis earum dignissimos nulla? Enim inventore aliquid animi voluptas! Cum placeat fugit exercitationem. Omnis in ex laborum adipisci obcaecati reiciendis ut quod totam nemo aspernatur? Nostrum ipsum nemo ab. Ex, quibusdam accusamus? Doloremque laboriosam aliquid, inventore odit ipsum debitis.
         </div>
-
+        <div className=' flex pt-8 justify-center'>
+            <img src={lion} className='max-h-60 '/>
+        </div>
         </main>
         </div>
         <Footer/>

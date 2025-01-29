@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import AxiosInstance from "../AxiosInstance";
 import NavbarNew from '../NavbarNew'
+import Footer from '../Footer'
+
 
 
 const Hotel = ({ userEmail }) => {
@@ -98,6 +100,7 @@ const Hotel = ({ userEmail }) => {
         Checkout
       </button>
     </div>
+    <Footer/>
     </>
   );
 };

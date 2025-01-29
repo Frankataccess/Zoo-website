@@ -1,8 +1,13 @@
+import NavbarNew from '../NavbarNew'
+import Footer from '../Footer'
 
 const About = () =>{
     return(
+        
         <div> 
-            This is the about page
+            <NavbarNew/>
+            This is the About page
+            <Footer/>
         </div>
     )
 

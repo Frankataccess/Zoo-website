@@ -7,6 +7,8 @@ import NavbarNew from '../NavbarNew'
 import lion from '../../assets/lion.jpg'
 import Carousel from '../Carousel'
 import MediaCard from '../MediaCard'
+import Footer from '../Footer'
+
 
 const Events = () =>{
 
@@ -67,6 +69,7 @@ const Events = () =>{
         </div>
 
         </main>
+        <Footer/>
     </div>
     )
 }
