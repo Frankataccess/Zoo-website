@@ -72,4 +72,32 @@ class TicketViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         print('Received payload:', request.data)  # Debugging
-        return super().create(request, *args, **kwargs)
+        
+        # Extract the tickets from the request data
+        tickets_data = request.data.get('tickets', [])
+        
+        if not tickets_data:
+            return Response({"error": "No tickets provided"}, status=400)
+
+        # Create tickets for each entry in the tickets array
+        for ticket_data in tickets_data:
+            ticket_type = ticket_data.get('ticket_type')
+            ticket_date = ticket_data.get('ticket_date')
+            quantity = ticket_data.get('quantity', 1)  # Default to 1 if not specified
+
+            # Validate ticket type and date
+            if not ticket_type or ticket_type not in dict(Ticket.TICKET_CHOICES).keys():
+                return Response({"error": "Invalid ticket type"}, status=400)
+            if not ticket_date:
+                return Response({"error": "Ticket date is required"}, status=400)
+
+            # Create the tickets based on the quantity
+            for _ in range(quantity):
+                Ticket.objects.create(
+                    user=request.user.email,
+                    ticket_type=ticket_type,
+                    ticket_date=ticket_date
+                )
+
+        return Response({"message": "Tickets created successfully."}, status=201)
+
